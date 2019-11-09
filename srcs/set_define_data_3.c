@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 14:24:36 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/14 12:41:27 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 13:55:32 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,13 @@ void	set_ldouble(va_list args, t_pf_arg *tmp)
 	ft_memcpy(tmp->data, &data, tmp->datasize);
 }
 
-void	set_string(va_list args, t_pf_arg *tmp)
+int		set_string(va_list args, t_pf_arg *tmp)
 {
 	char *data;
 
+	tmp->data = ft_strnew(tmp->datasize);
+	if (tmp->data == NULL)
+		return (0);
 	data = va_arg(args, char *);
 	if (data)
 		ft_strcpy(tmp->data, data);
@@ -63,4 +66,5 @@ void	set_string(va_list args, t_pf_arg *tmp)
 		ft_memdel(&tmp->data);
 		tmp->datasize = 0;
 	}
+	return (1);
 }

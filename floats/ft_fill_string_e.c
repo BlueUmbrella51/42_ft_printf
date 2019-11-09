@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 16:08:22 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/08 16:09:58 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 14:41:02 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void		ft_add_exp_prefix(t_pf_arg *instr, int *i, int fact)
 	(*i)++;
 }
 
-void			ft_add_exp(t_pf_arg *instr, t_bigint *val, int fact, int i)
+void			ft_add_exp(t_pf_arg *instr, int fact, int i)
 {
 	int len;
 	int mlt;

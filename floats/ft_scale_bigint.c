@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 15:56:46 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/29 15:59:46 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 14:39:07 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static void		ft_scale_uz(t_bigint *val, int *fact, int *mult)
 int				ft_scale_bigint(t_bigint *val, t_pf_arg *instr, int *fact,
 long int exp)
 {
-	int i;
 	int mult;
 
 	exp += 63;

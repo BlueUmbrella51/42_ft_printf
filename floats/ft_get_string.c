@@ -6,14 +6,14 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 16:21:33 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/08 13:15:16 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 18:30:07 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/floats.h"
 #include "../libft/libft.h"
 
-static int		ft_scale_by_exp(long int exp, t_bigint *val, t_pf_arg *instr)
+static int		ft_scale_by_exp(long int exp, t_bigint *val)
 {
 	if (exp >= 0)
 	{
@@ -22,7 +22,7 @@ static int		ft_scale_by_exp(long int exp, t_bigint *val, t_pf_arg *instr)
 	}
 	else
 	{
-		if (!ft_div_bigint(val, exp, instr->precision))
+		if (!ft_div_bigint(val, exp))
 			return (0);
 	}
 	return (1);
@@ -37,8 +37,8 @@ int				ft_get_string(t_pf_arg *instr, long double num)
 	val = (t_bigint *)malloc(sizeof(t_bigint));
 	if (!val)
 		return (0);
-	exp = 0;
-	mnt = 0;
+	// exp = 0;
+	// mnt = 0;
 	if (!ft_frexp(num, &exp, val, &mnt))
 		return (0);
 	exp -= 63;
@@ -47,7 +47,7 @@ int				ft_get_string(t_pf_arg *instr, long double num)
 	if (ft_isnan(num) || ft_isinf(num))
 		return (ft_string_exceptions(num, instr, val));
 	ft_create_bigint(mnt, exp, val);
-	if (!ft_scale_by_exp(exp, val, instr))
+	if (!ft_scale_by_exp(exp, val))
 		return (0);
 	return (ft_make_output(instr, val, exp));
 }

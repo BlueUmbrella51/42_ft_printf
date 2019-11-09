@@ -1,6 +1,6 @@
 NAME = libfloats.a
 CC = gcc
-FLAGS = -Wall -Werror -Wextra
+IFLAGS = -Wall -Werror -Wextra
 RAWFILES = ft_frexp ft_get_string float_utilities ft_create_bigint \
 ft_mult_bigint ft_div_bigint ft_round_bigint ft_create_string ft_fill_str \
 ft_scale_bigint ft_create_string_e ft_get_len_zero_excep ft_zero_str \
@@ -13,10 +13,10 @@ HEADER = includes/floats.h
 all: $(NAME)
 
 $(NAME): $(OSRCS)
-	@libtool -static -o $(NAME) $(OSRCS)
+	@ar -rcT $(NAME) $(OSRCS)
 
-%.o: %.c
-	@$(CC) $(CFLAGS) -o $@ -c $<
+%.o: %.c $(HEADER)
+	$(CC) $(IFLAGS) -o $@ -c $<
 
 clean:
 	@rm -f *.o *~

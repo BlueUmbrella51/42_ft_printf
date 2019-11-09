@@ -206,6 +206,7 @@ void  test_versions()
   printf("\n\ntest printf versions\n\n");
   printf("ft_asprintf return %d\n", ft_asprintf(&vas_str, "Hello %0500hd\n", 12));
   printf("ft_asprintf result %s|\n", vas_str);
+  free (vas_str);
   printf("   asprintf return %d\n", asprintf(&vs_str, "Hello %0500hd\n", 12));
   printf("   asprintf result %s|\n", vs_str);
   fp = fopen("test", "w");
@@ -314,14 +315,18 @@ void  test_format()
   char *res1;
   int fd = -1;
 
+    res = NULL;
   printf("\n\ntest illegal input (versions)\n\n");
   printf("ft_printf return %d", ft_printf(format, 1, 2));
   printf("\n");
   printf("   printf return %d", printf(format, 1, 2));
   printf("\n");
-  printf("ft_asprintf return %d", ft_asprintf(&res, format, 1, 2));
+  printf("ft_asprintf return %d", ft_asprintf(&res, "", 1, 2));
   printf("\n");
+  printf("%s\n", res);
   printf("   asprintf return %d", asprintf(&res1, format, 1, 2));
+  if (res)
+      free(res);
   printf("\n");
   printf("ft_printf return %d", ft_dprintf(fd, "%d %d\n", 1, 2));
   printf("\n");
@@ -345,18 +350,18 @@ void  test_format()
 
 void  test_all()
 {
-  test_dispatcher();
+  // test_dispatcher();
   test_versions();
-  test_d();
-  test_b();
-  test_null();
-  test_numbered();
-  test_unsigned();
-  test_ef();
-  test_c();
-  test_s();
-  test_handle_empty();
-  test_format();
+  // test_d();
+  // test_b();
+  // test_null();
+  // test_numbered();
+  // test_unsigned();
+  // test_ef();
+  // test_c();
+  // test_s();
+  // test_handle_empty();
+  // test_format();
 }
 int	main()
 {

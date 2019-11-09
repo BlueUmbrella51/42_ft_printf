@@ -6,16 +6,16 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 14:05:15 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/30 14:08:07 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 14:38:24 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/floats.h"
 
-static int			ft_power(uint32_t n)
+static uint32_t		ft_power(uint32_t n)
 {
-	int i;
-	int pow;
+	uint32_t i;
+	uint32_t pow;
 
 	pow = 1;
 	i = 0;

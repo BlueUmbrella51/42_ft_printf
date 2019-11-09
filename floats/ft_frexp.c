@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 16:10:36 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/08 16:19:45 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 14:25:26 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,9 @@ unsigned char *arr)
 	int		i;
 
 	index = 10;
-	i = 0;
 	while (index > 0)
 	{
-		bit = 128;
+		bit = ARR;
 		byte = byte_pointer[index - 1];
 		i = 0;
 		while (i < 8)

@@ -1,5 +1,6 @@
 NAME = libftprintf.a
-IFLAGS=-Wall -Wextra -I libft -I floats/includes
+CC = gcc
+IFLAGS= -Wall -Wextra -Werror
 RAW_FILES=ft_vdprintf ft_parse_format ft_is_of_type ft_create_argument \
 ft_add_arg_parts ft_pf_lst ft_adj_flags_precision \
 ft_get_size_of_datatype ft_set_data ft_set_data_type ft_set_def_prec \
@@ -39,10 +40,11 @@ ft_create_output ft_get_length ft_get_max_index
 FLOATS_SRC=$(addsuffix .c,$(addprefix floats/,$(FLOATS_RAW)))
 FLOATS_OBJ=$(patsubst floats/%.c,floats/%.o,$(FLOATS_SRC))
 FLOATS_HEADER=floats/includes/floats.h
+
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES) libft/libft.a floats/libfloats.a
-	libtool -static -o $@ $^
+	ar -rcT $@ $^
 
 libft/libft.a: $(LIBFT_OBJ)
 	$(MAKE) -C libft

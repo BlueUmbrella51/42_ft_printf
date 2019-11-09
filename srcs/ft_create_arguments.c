@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/07 11:42:19 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/07 14:03:43 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 14:08:11 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ va_list args, int *range, int high)
 	int			i;
 
 	i = 1;
+	va_copy(prev, args);
 	while (i <= high)
 	{
 		dbl = 0;

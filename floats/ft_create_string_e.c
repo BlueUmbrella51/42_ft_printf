@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 15:17:16 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/30 14:09:17 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 16:48:32 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int fact)
 		i++;
 	}
 	ft_fill_fract(instr, val, &mult, &i);
-	ft_add_exp(instr, val, fact, i);
+	ft_add_exp(instr, fact, i);
 }
 
 int				ft_create_string_e(t_pf_arg *instr, t_bigint *val, int mult,

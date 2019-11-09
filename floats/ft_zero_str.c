@@ -6,14 +6,14 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 14:22:37 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/08 13:15:28 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 14:40:27 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/floats.h"
 #include "../libft/libft.h"
 
-static void			ft_zero_e(t_pf_arg *instr, t_bigint *val, int i)
+static void			ft_zero_e(t_pf_arg *instr, int i)
 {
 	int j;
 
@@ -31,7 +31,7 @@ static void			ft_zero_e(t_pf_arg *instr, t_bigint *val, int i)
 	instr->tmp[i] = '+';
 }
 
-static void			ft_floats(t_pf_arg *instr, int i, t_bigint *val)
+static void			ft_floats(t_pf_arg *instr, int i)
 {
 	if (instr->conversion == 'f' || instr->conversion == 'F')
 	{
@@ -56,7 +56,7 @@ static void			ft_floats(t_pf_arg *instr, int i, t_bigint *val)
 			instr->tmp[i] = '.';
 			i++;
 		}
-		ft_zero_e(instr, val, i);
+		ft_zero_e(instr, i);
 	}
 }
 
@@ -84,7 +84,7 @@ int					ft_zero_string(t_pf_arg *instr, t_bigint *val)
 		i++;
 	}
 	i++;
-	ft_floats(instr, i, val);
+	ft_floats(instr, i);
 	free(val);
 	return (1);
 }

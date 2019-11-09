@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/22 11:07:17 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/06 12:19:41 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 19:24:45 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,16 @@ static t_writer		*initialize_wrt(char **ret)
 
 int					ft_trim_string(char **ret, t_writer *wrt)
 {
-	char		*tmp;
+	char    *tmp;
+	char    *prev;
 
+    prev = *ret;
 	tmp = ft_strnew(wrt->curr);
 	if (!tmp)
 		return (0);
 	ft_strncpy(tmp, *ret, wrt->curr);
-	if (*ret)
-		free(*ret);
+	if (prev)
+		free(prev);
 	*ret = tmp;
 	return (1);
 }
@@ -63,7 +65,10 @@ va_list ap)
 	if (!ft_create_arguments(&instructions, ap))
 		return (-1);
 	if (!ft_dispatcher(&instructions, format, wrt))
+	{
+		*ret = NULL;
 		return (-1);
+	}
 	if (wrt->u.vas.vas_size != 0)
 	{
 		if (!ft_trim_string(ret, wrt))

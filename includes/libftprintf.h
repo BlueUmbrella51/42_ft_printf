@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/22 10:55:17 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/07 15:39:07 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 19:14:40 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ int					ft_create_arguments(t_pf_arg **instructions, va_list args);
 
 size_t				get_size_of_datatype(char *datatype);
 
-void				ft_set_data(va_list args, t_pf_arg *tmp);
+int					ft_set_data(va_list args, t_pf_arg *tmp);
 
 void				set_datatype(t_pf_arg *instr);
 
@@ -221,6 +221,6 @@ void				set_ullint(va_list args, t_pf_arg *tmp);
 void				set_wint(va_list args, t_pf_arg *tmp);
 void				set_vpoint(va_list args, t_pf_arg *tmp);
 void				set_ldouble(va_list args, t_pf_arg *tmp);
-void				set_string(va_list args, t_pf_arg *tmp);
+int					set_string(va_list args, t_pf_arg *tmp);
 void				set_double(va_list args, t_pf_arg *tmp);
 #endif

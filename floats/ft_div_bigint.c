@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 15:23:57 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/09 18:00:07 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 14:35:13 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ uint32_t nfact)
 {
 	uint32_t tmp;
 	uint32_t div;
-	uint32_t res;
 	uint32_t quotient;
 
 	div = base * nfact;
@@ -51,7 +50,6 @@ static uint32_t		ft_div(uint32_t num, int base, uint32_t *rem)
 {
 	uint32_t nfact;
 	uint32_t result;
-	uint32_t quotient;
 
 	result = 0;
 	if (num == 0 && *rem == 0)
@@ -70,13 +68,11 @@ static uint32_t		ft_div(uint32_t num, int base, uint32_t *rem)
 	return (result);
 }
 
-int					ft_div_bigint(t_bigint *val, long int exp, int precision)
+int					ft_div_bigint(t_bigint *val, long int exp)
 {
 	int			i;
 	int			j;
 	uint32_t	remainder;
-	int			pos;
-	int			last_pos;
 
 	exp = ft_abs(exp);
 	i = 0;

@@ -6,12 +6,24 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 13:40:35 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/08 13:54:04 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 14:13:30 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 #include "../libft/libft.h"
+
+static void		initialise_range(int high, int *range)
+{
+	int i;
+
+	i = 0;
+	while (i < high)
+	{
+		range[i] = 0;
+		i++;
+	}
+}
 
 void	check_range(t_pf_arg **instructions, int high, int *range)
 {
@@ -19,7 +31,7 @@ void	check_range(t_pf_arg **instructions, int high, int *range)
 	t_pf_arg	*tmp;
 
 	tmp = *instructions;
-	ft_bzero(range, high);
+	initialise_range(high, range);
 	i = 1;
 	while (i <= high)
 	{

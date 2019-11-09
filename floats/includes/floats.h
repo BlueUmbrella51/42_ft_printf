@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/30 14:15:50 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/30 14:22:16 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 19:31:20 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void			ft_round_e(t_bigint *val, t_pf_arg *instr, int *fact,
 int *mult);
 void			ft_get_startind(t_bigint *val);
 int				ft_add_len_fact(int fact);
-void			ft_add_exp(t_pf_arg *instr, t_bigint *val, int fact, int i);
+void			ft_add_exp(t_pf_arg *instr, int fact, int i);
 int				ft_frexp(long double n, long int *exp, t_bigint *val,
 long long unsigned *mnt);
 int				ft_get_string(t_pf_arg *instr, long double num);
@@ -49,7 +49,7 @@ long int		ft_abs(long int n);
 void			ft_create_bigint(unsigned long long n, long int exp,
 t_bigint *val);
 int				ft_mult_bigint(t_bigint *val, long int exp);
-int				ft_div_bigint(t_bigint *val, long int exp, int precision);
+int				ft_div_bigint(t_bigint *val, long int exp);
 void			ft_round_bigint(t_bigint *val, int prec, t_pf_arg *instr);
 int				ft_create_string(t_pf_arg *instr, t_bigint *val);
 void			ft_first_place(t_pf_arg *instr, t_bigint val, int *j);
