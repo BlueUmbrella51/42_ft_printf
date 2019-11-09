@@ -6,7 +6,7 @@
 #    By: lravier <lravier@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/03/20 09:31:34 by lravier        #+#    #+#                 #
-#    Updated: 2019/11/06 12:46:19 by lravier       ########   odam.nl          #
+#    Updated: 2019/11/09 13:41:50 by lravier       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,6 @@ HEADER = libft.h get_next_line.h
 all: $(NAME)
 
 $(NAME): $(OSRCS)
-	#@$(CC) $(CFLAGS) -c $(CSRCS) $(HEADER)
 	@libtool -static -o $(NAME) $(OSRCS)
 
 %.o: %.c

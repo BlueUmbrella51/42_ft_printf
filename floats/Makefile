@@ -13,7 +13,6 @@ HEADER = includes/floats.h
 all: $(NAME)
 
 $(NAME): $(OSRCS)
-	#@$(CC) $(CFLAGS) -c $(CSRCS) $(HEADER)
 	@libtool -static -o $(NAME) $(OSRCS)
 
 %.o: %.c
