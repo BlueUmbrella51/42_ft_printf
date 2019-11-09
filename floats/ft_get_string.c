@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 16:21:33 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 18:30:07 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 20:00:10 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,10 @@ int				ft_get_string(t_pf_arg *instr, long double num)
 	long int			exp;
 	long long unsigned	mnt;
 	t_bigint			*val;
-
+    
 	val = (t_bigint *)malloc(sizeof(t_bigint));
 	if (!val)
 		return (0);
-	// exp = 0;
-	// mnt = 0;
 	if (!ft_frexp(num, &exp, val, &mnt))
 		return (0);
 	exp -= 63;

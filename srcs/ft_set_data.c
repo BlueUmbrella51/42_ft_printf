@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 13:56:39 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 13:56:29 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 20:14:57 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int			ft_set_data(va_list args, t_pf_arg *tmp)
 {
 	if (ft_strcmp(tmp->datatype, STRING) != 0)
 		tmp->data = malloc(tmp->datasize);
-	if (tmp->data == NULL)
+	if (tmp->data == NULL && ft_strcmp(tmp->datatype, STRING) != 0)
 		return (0);
 	if (ft_strcmp(tmp->datatype, S_CHAR) == 0)
 	{

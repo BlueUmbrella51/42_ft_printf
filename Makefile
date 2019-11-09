@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 CC = gcc
-IFLAGS= -Wall -Wextra -Werror
+IFLAGS= -Wall -Wextra -Werror -g
 RAW_FILES=ft_vdprintf ft_parse_format ft_is_of_type ft_create_argument \
 ft_add_arg_parts ft_pf_lst ft_adj_flags_precision \
 ft_get_size_of_datatype ft_set_data ft_set_data_type ft_set_def_prec \

@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 15:14:03 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 18:30:22 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 19:51:59 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,12 +99,11 @@ int			ft_conv_g(t_pf_arg *instr, t_bigint *val, long int exp)
 	t_pf_arg	cpy_instr;
     t_bigint    cpy_val;
     int         fact;
-	int         mult;
 
 	fact = 0;
 	cpy_val = *val;
 	cpy_instr = *instr;
-	mult = ft_scale_bigint(&cpy_val, &cpy_instr, &fact, exp);
+	ft_scale_bigint(&cpy_val, &cpy_instr, &fact, exp);
 	cpy_instr.precision--;
 	if (fact < -4 || fact >= instr->precision)
 		return (ft_g_as_e(instr, val, exp));

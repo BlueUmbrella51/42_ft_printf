@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 14:24:36 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 13:55:32 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/09 20:23:05 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,8 @@ int		set_string(va_list args, t_pf_arg *tmp)
 {
 	char *data;
 
-	tmp->data = ft_strnew(tmp->datasize);
-	if (tmp->data == NULL)
-		return (0);
 	data = va_arg(args, char *);
+	tmp->data = ft_strdup(data);
 	if (data)
 		ft_strcpy(tmp->data, data);
 	else

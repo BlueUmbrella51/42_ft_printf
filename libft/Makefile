@@ -6,13 +6,13 @@
 #    By: lravier <lravier@student.codam.nl>           +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/03/20 09:31:34 by lravier        #+#    #+#                 #
-#    Updated: 2019/11/09 19:30:40 by lravier       ########   odam.nl          #
+#    Updated: 2019/11/09 19:50:23 by lravier       ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
-IFLAGS = -Wall -Werror -Wextra
+IFLAGS = -Wall -Werror -Wextra -g
 RAWFILES = ft_putchar ft_putstr ft_error ft_memset ft_bzero ft_strlen \
 ft_isupper ft_islower ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint \
 ft_toupper ft_tolower ft_isspace ft_atoi ft_strcpy ft_strncpy ft_strcmp \

@@ -272,7 +272,7 @@ void  test_numbered()
   printf("    printf %1$2$3$f\n", 1., 4, 8);
   ft_printf(" ft_printf %1$2$3$f\n", 1., 4, 8);
   printf("    printf %1$*2$*3$f\n", 1., 4, 12);
-  ft_printf(" ft_printf %1$*2$*3$.*1$f\n", 1, 4, 12);
+  ft_printf(" ft_printf %1$*2$*3$.*1$f\n", 1., 4, 12);
 }
 
 void  test_b()
@@ -351,11 +351,11 @@ void  test_format()
 void  test_all()
 {
   // test_dispatcher();
-  test_versions();
+  // test_versions();
   // test_d();
   // test_b();
   // test_null();
-  // test_numbered();
+  test_numbered();
   // test_unsigned();
   // test_ef();
   // test_c();
