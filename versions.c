@@ -34,19 +34,45 @@ void    test_asprintf()
 {
     char *str;
     char *str1;
+    char *str2;
+    char *str3;
+    char *str4;
+    char *str5;
 
+    str = NULL;
+    str1 = NULL;
+    str2 = NULL;
+    str3 = NULL;
+    str4 = NULL;
+    str5 = NULL;
     printf("%d\n", ft_asprintf(&str, ""));
     printf("%s\n", str);
+    if (str)
+        free (str);
     printf("%d\n", asprintf(&str1, ""));
     printf("%s\n", str1);
-    printf("%d\n", ft_asprintf(&str, "Hello World here we go again I guess Hello Darling\n"));
-    printf("%s\n", str);
-    printf("%d\n", asprintf(&str1, "Hello World here we go again I guess Hello Darling\n"));
-    printf("%s\n", str1);
-    printf("%d\n", ft_asprintf(&str, NULL));
-    printf("%s\n", str);
-    printf("%d\n", asprintf(&str1, NULL));
-    printf("%s\n", str1);
+    if (str1)
+        free (str1);
+    printf("%d\n", ft_asprintf(&str2, "Hello World here we go again I guess Hello Darling\n"));
+    printf("%s\n", str2);
+    if (str2)
+        free (str2);
+    printf("%d\n", asprintf(&str3, "Hello World here we go again I guess Hello Darling\n"));
+    printf("%s\n", str3);
+    if (str3)
+        free (str3);
+    printf("%d\n", ft_asprintf(&str4, NULL));
+    if (str4)
+    {
+        printf("%s\n", str4);
+        free (str4);
+    }
+    printf("%d\n", asprintf(&str5, NULL));
+    if (str5)
+    {
+        printf("%s\n", str5);
+        free (str5);
+    }
 }
 
 void    test_dprintf()
@@ -115,15 +141,15 @@ void    test_versions()
     /* allocate string */
     test_asprintf();
     /* file * */
-    test_fprintf();
+    // test_fprintf();
     /* fd */
-    test_dprintf();
+    // test_dprintf();
     /* pre allocate buffer, assume size INT_MAX + 1 */
-    test_sprintf();
+    // test_sprintf();
     /* pre allocate buffer with given size
     If size is 0, no Null terminator, else always terminated
     write size -1. Return how many chars WOULD be written*/
-    test_snprintf();
+    // test_snprintf();
 }
 
 int main()

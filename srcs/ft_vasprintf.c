@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/22 11:07:17 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/11 12:42:08 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 13:36:13 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int					ft_trim_string(char **ret, t_writer *wrt)
 	char    *prev;
 
     prev = *ret;
+	printf("curr %d\n", wrt->curr);
 	tmp = ft_strnew(wrt->curr);
 	if (!tmp)
 		return (0);
