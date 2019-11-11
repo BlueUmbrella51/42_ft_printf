@@ -6,14 +6,14 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 13:07:50 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/13 21:11:11 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 12:01:42 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 #include "../libft/libft.h"
 
-int		ft_handle_empty(t_pf_arg *instr, const char *restrict format)
+int		ft_handle_empty(t_pf_arg *instr, const char *format)
 {
 	int len;
 

@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 14:20:12 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 19:03:13 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 11:36:38 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ int     ft_enlarge(char **str, int prev_size, int new_size)
 	ft_strcpy(new, *str);
 	free(*str);
 	*str = new;
-	printf("new %s\n", *str);
 	return (1);
 }
 
@@ -87,7 +86,6 @@ int		ft_write_vas(char *src, int len, t_writer *wrt)
 
 	if (len == 0)
 		return (1);
-	printf("curr %d\n", wrt->curr);
 	enlarge = wrt->u.vas.vas_size;
 	if ((wrt->curr + len) >= (wrt->u.vas.vas_size - 1))
 	{
@@ -101,6 +99,5 @@ int		ft_write_vas(char *src, int len, t_writer *wrt)
 	}
 	ft_strncpy(&(*wrt->u.vas.cpp)[wrt->curr], src, len);
 	wrt->curr += len;
-	printf("curr %d\n", wrt->curr);
 	return (1);
 }

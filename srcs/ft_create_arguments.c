@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/07 11:42:19 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 20:11:48 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 11:59:11 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int		conv_no_i(va_list curr, va_list prev, int *dbl, t_pf_arg *tmp)
 	{
 		va_copy(curr, prev);
 		ft_set_data(curr, tmp);
-		printf("tmp %s\n", (char *)tmp->data);
 	}
 	else
 	{

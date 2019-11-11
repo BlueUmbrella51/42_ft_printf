@@ -172,8 +172,6 @@ void  test_c()
   ft_printf(" ft_printf %0#15.c\n", c);
   printf("    printf %lc\n", t);
   ft_printf(" ft_printf %lc\n", t);
-  printf("    printf %c\n", t);
-  ft_printf(" ft_printf %c\n", t);
 }
 
 void  test_s()
@@ -315,7 +313,7 @@ void  test_format()
   char *res1;
   int fd = -1;
 
-    res = NULL;
+  res = NULL;
   printf("\n\ntest illegal input (versions)\n\n");
   printf("ft_printf return %d", ft_printf(format, 1, 2));
   printf("\n");
@@ -350,18 +348,18 @@ void  test_format()
 
 void  test_all()
 {
-  // test_dispatcher();
-  // test_versions();
-  // test_d();
-  // test_b();
-  // test_null();
+  test_dispatcher();
+  test_versions();
+  test_d();
+  test_b();
+  test_null();
   test_numbered();
-  // test_unsigned();
-  // test_ef();
-  // test_c();
-  // test_s();
-  // test_handle_empty();
-  // test_format();
+  test_unsigned();
+  test_ef();
+  test_c();
+  test_s();
+  test_handle_empty();
+  test_format();
 }
 int	main()
 {

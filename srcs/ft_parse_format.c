@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 13:28:54 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 20:06:57 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 12:01:42 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int *curr, t_pf_arg *instr)
 	(*i)++;
 }
 
-static void			set_conv_def(const char *restrict format, int *i,
+static void			set_conv_def(const char *format, int *i,
 int *curr, t_pf_arg *instr)
 {
 	if (is_conversion(format[*i]))
@@ -37,7 +37,7 @@ int *curr, t_pf_arg *instr)
 	instr->datasize = get_size_of_datatype(instr->datatype);
 }
 
-static void			get_instruction(const char *restrict format,
+static void			get_instruction(const char *format,
 int *i, int *curr, t_pf_arg *instr)
 {
 	instr->s_ind = *i;

@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/06 14:48:43 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/08 15:01:32 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 12:01:42 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void			add_flag(char c, int *i, t_pf_arg *instr)
 	(*i)++;
 }
 
-void			if_is_number(const char *restrict format, int *i,
+void			if_is_number(const char *format, int *i,
 int *curr, t_pf_arg *instr)
 {
 	int j;

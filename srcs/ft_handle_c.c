@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/07/06 15:49:41 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/03 16:39:00 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 11:51:11 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ static int	handle_nc(t_pf_arg *instr)
 	c = *((unsigned char *)instr->data);
 	instr->len = 1;
 	instr->tmp = ft_strnew(1);
-	instr->tmp[0] = c;
 	if (!instr->tmp)
 		return (0);
+	instr->tmp[0] = c;
 	return (1);
 }
 

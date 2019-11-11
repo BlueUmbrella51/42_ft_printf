@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/06 14:32:34 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/13 21:07:51 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 12:01:42 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	get_result_other(t_pf_arg *instr)
 	return (0);
 }
 
-int			get_result(t_pf_arg *instr, const char *restrict format)
+int			get_result(t_pf_arg *instr, const char *format)
 {
 	if (instr->conversion == '0')
 		return (ft_handle_empty(instr, format));

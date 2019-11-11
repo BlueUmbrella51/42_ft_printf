@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/06 14:41:15 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/07 14:01:29 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 12:01:42 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	free_arg(t_pf_arg **instr)
 	free(*instr);
 }
 
-static int	calc_len(const char *restrict format, int i, int *state)
+static int	calc_len(const char *format, int i, int *state)
 {
 	int		j;
 	int		len;
@@ -58,7 +58,7 @@ int *state, int *i)
 	return (1);
 }
 
-static int	ft_write_frm(t_writer *wrt, const char *restrict format,
+static int	ft_write_frm(t_writer *wrt, const char *format,
 int *i, int *state)
 {
 	wrt->len = calc_len(format, *i, state);

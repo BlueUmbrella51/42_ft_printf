@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/22 11:07:17 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/06 12:18:51 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 12:00:02 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,18 @@ va_list ap)
 		return (-1);
 	res = wrt->curr;
 	free(wrt);
-	wrt = NULL;
 	return (res);
 }
 
 int					ft_printf(const char *format, ...)
 {
-	va_list ap;
+	va_list	ap;
+	int		res;
 
 	va_start(ap, format);
-	return (ft_vdprintf(1, format, ap));
+	res = ft_vdprintf(1, format, ap);
 	va_end(ap);
+	return (res);
 }
 
 int					ft_dprintf(int fd, const char *format, ...)

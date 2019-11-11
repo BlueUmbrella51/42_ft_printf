@@ -6,14 +6,14 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/06 15:00:30 by lravier        #+#    #+#                */
-/*   Updated: 2019/10/13 21:09:07 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 12:01:42 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 #include "../libft/libft.h"
 
-static void	add_lm_l(int *i, const char *restrict format, t_pf_arg *instr)
+static void	add_lm_l(int *i, const char *format, t_pf_arg *instr)
 {
 	int	j;
 
@@ -29,7 +29,7 @@ static void	add_lm_l(int *i, const char *restrict format, t_pf_arg *instr)
 		instr->length_mods = 3;
 }
 
-static void	add_lm_h(int *i, const char *restrict format, t_pf_arg *instr)
+static void	add_lm_h(int *i, const char *format, t_pf_arg *instr)
 {
 	int	j;
 
@@ -45,7 +45,7 @@ static void	add_lm_h(int *i, const char *restrict format, t_pf_arg *instr)
 		instr->length_mods = 2;
 }
 
-void		add_lm(const char *restrict format, int *i, t_pf_arg *instr)
+void		add_lm(const char *format, int *i, t_pf_arg *instr)
 {
 	if (format[*i] == 'l')
 		add_lm_l(i, format, instr);

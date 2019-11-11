@@ -6,14 +6,14 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 13:24:14 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/06 12:21:15 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 12:01:42 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libftprintf.h"
 #include "../libft/libft.h"
 
-static void		next_is_dollar(const char *restrict format, int *i, int *curr,
+static void		next_is_dollar(const char *format, int *i, int *curr,
 t_pf_arg *instr)
 {
 	(*i)++;
@@ -23,7 +23,7 @@ t_pf_arg *instr)
 	(*i)++;
 }
 
-static void		next_is_ast(const char *restrict format, int *i, int *curr,
+static void		next_is_ast(const char *format, int *i, int *curr,
 t_pf_arg *instr)
 {
 	int j;
@@ -51,7 +51,7 @@ t_pf_arg *instr)
 	}
 }
 
-void			if_is_period(const char *restrict format, int *i, int *curr,
+void			if_is_period(const char *format, int *i, int *curr,
 t_pf_arg *instr)
 {
 	if (is_number(format[(*i) + 1]))
