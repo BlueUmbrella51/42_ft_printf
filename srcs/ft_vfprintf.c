@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/22 11:07:17 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/06 12:19:49 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 12:41:08 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,10 @@ int					ft_fprintf(FILE *stream,
 const char *format, ...)
 {
 	va_list ap;
+	int		res;
 
 	va_start(ap, format);
-	return (ft_vfprintf(stream, format, ap));
+	res = ft_vfprintf(stream, format, ap);
 	va_end(ap);
+	return (res);
 }

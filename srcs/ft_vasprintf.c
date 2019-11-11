@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/22 11:07:17 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 19:24:45 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/11 12:42:08 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,9 @@ va_list ap)
 int					ft_asprintf(char **ret, const char *format, ...)
 {
 	va_list ap;
-
+	int		res;
 	va_start(ap, format);
-	return (ft_vasprintf(ret, format, ap));
+	res = ft_vasprintf(ret, format, ap);
 	va_end(ap);
+	return (res);
 }
