@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 13:40:35 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 14:13:30 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/14 13:22:45 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void		initialise_range(int high, int *range)
 	}
 }
 
-void	check_range(t_pf_arg **instructions, int high, int *range)
+void			check_range(t_pf_arg **instructions, int high, int *range)
 {
 	int			i;
 	t_pf_arg	*tmp;
@@ -50,7 +50,7 @@ void	check_range(t_pf_arg **instructions, int high, int *range)
 	}
 }
 
-void	find_highest(t_pf_arg **instructions, int *high)
+void			find_highest(t_pf_arg **instructions, int *high)
 {
 	t_pf_arg *tmp;
 

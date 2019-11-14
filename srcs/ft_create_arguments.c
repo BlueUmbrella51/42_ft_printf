@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/07 11:42:19 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/11 11:59:11 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/14 13:31:57 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,7 @@ va_list args, int *range, int high)
 				prec_no_i(args, prev, &dbl, tmp);
 			tmp = tmp->next;
 		}
-		if (dbl == 0)
-			va_arg(args, void *);
+		check_double(dbl, args);
 		i++;
 	}
 	va_end(prev);

@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 13:59:21 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/08 15:50:06 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/14 13:17:31 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,12 @@
 
 int		ft_handle_pnull(t_pf_arg *instr)
 {
-	int i;
-	char *str;
+	int		i;
+	char	*str;
 
 	str = "0x0";
 	i = 0;
 	instr->len = 2 + instr->precision;
-	// if (instr->precision > 1)
-	// 	instr->len++;
 	instr->tmp = ft_strnew(instr->len);
 	if (!instr->tmp)
 		return (0);

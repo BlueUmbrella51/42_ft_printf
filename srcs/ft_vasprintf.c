@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/22 11:07:17 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/11 13:36:13 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/14 13:37:45 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,12 @@ static t_writer		*initialize_wrt(char **ret)
 	return (wrt);
 }
 
-int					ft_trim_string(char **ret, t_writer *wrt)
+static int			ft_trim_string(char **ret, t_writer *wrt)
 {
-	char    *tmp;
-	char    *prev;
+	char	*tmp;
+	char	*prev;
 
-    prev = *ret;
-	printf("curr %d\n", wrt->curr);
+	prev = *ret;
 	tmp = ft_strnew(wrt->curr);
 	if (!tmp)
 		return (0);
@@ -45,6 +44,16 @@ int					ft_trim_string(char **ret, t_writer *wrt)
 	if (prev)
 		free(prev);
 	*ret = tmp;
+	return (1);
+}
+
+static int			ft_get_arguments(const char *format, t_pf_arg *instructions,
+va_list ap)
+{
+	if (!ft_parse_format(format, &instructions))
+		return (0);
+	if (!ft_create_arguments(&instructions, ap))
+		return (0);
 	return (1);
 }
 
@@ -61,9 +70,7 @@ va_list ap)
 	if (!wrt)
 		return (-1);
 	instructions = NULL;
-	if (!ft_parse_format(format, &instructions))
-		return (-1);
-	if (!ft_create_arguments(&instructions, ap))
+	if (!ft_get_arguments(format, instructions, ap))
 		return (-1);
 	if (!ft_dispatcher(&instructions, format, wrt))
 	{
@@ -84,6 +91,7 @@ int					ft_asprintf(char **ret, const char *format, ...)
 {
 	va_list ap;
 	int		res;
+
 	va_start(ap, format);
 	res = ft_vasprintf(ret, format, ap);
 	va_end(ap);

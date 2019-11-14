@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 CC = gcc
-IFLAGS= -Wall -Wextra -Werror -g
+IFLAGS= -Wall -Wextra -Werror
 RAW_FILES=ft_vdprintf ft_parse_format ft_is_of_type ft_create_argument \
 ft_add_arg_parts ft_pf_lst ft_adj_flags_precision \
 ft_get_size_of_datatype ft_set_data ft_set_data_type ft_set_def_prec \
@@ -11,7 +11,8 @@ ft_conversion_type ft_handle_u ft_handle_x ft_calculate_length_u \
 ft_handle_b ft_handle_p ft_handle_c ft_handle_wint ft_handle_f \
 ft_handle_e ft_handle_s ft_handle_empty ft_strnull \
 ft_handle_g ft_writeout ft_vsnprintf ft_vfprintf ft_vasprintf \
-ft_write_output ft_vsprintf ft_get_result ft_lm
+ft_write_output ft_vsprintf ft_get_result ft_lm ft_writeout_vas \
+ft_check_dbl
 SRC_FILES=$(addprefix srcs/,$(addsuffix .c,$(RAW_FILES)))
 OBJ_FILES=$(patsubst srcs/%.c,obj/%.o,$(SRC_FILES))
 HEADER=includes/libftprintf.h
@@ -40,12 +41,14 @@ ft_create_output ft_get_length ft_get_max_index
 FLOATS_SRC=$(addsuffix .c,$(addprefix floats/,$(FLOATS_RAW)))
 FLOATS_OBJ=$(patsubst floats/%.c,floats/%.o,$(FLOATS_SRC))
 FLOATS_HEADER=floats/includes/floats.h
+OBJ_DIR=obj
 
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES) libft/libft.a floats/libfloats.a
-	ar -rcT $@ $^
+	libtool -static -o $@ $^
 
+export CFLAGS=$(IFLAGS)
 libft/libft.a: $(LIBFT_OBJ)
 	$(MAKE) -C libft
 
@@ -57,13 +60,13 @@ floats/libfloats.a: $(FLOATS_OBJ)
 $(FLOATS_OBJ): $(FLOATS_HEADER)
 
 obj:
-	mkdir -p $@
+	mkdir $@
 
 obj/%.o: srcs/%.c $(HEADER) | obj
 	$(CC) $(IFLAGS) -o $@ -c $<
 
-clean_obj: obj
-	rm -f obj/*.o
+clean_obj:
+	if [ -d "$(OBJ_DIR)" ]; then rm -rf obj; fi
 
 clean: clean_obj
 	make clean -C libft

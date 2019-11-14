@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/05/22 10:55:17 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 19:14:40 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/14 13:32:41 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,6 +156,7 @@ int					ft_pferror(char *str);
 int					adjust_flags_precision(t_pf_arg **instr);
 
 int					ft_create_arguments(t_pf_arg **instructions, va_list args);
+void				check_double(int dbl, va_list args);
 
 size_t				get_size_of_datatype(char *datatype);
 

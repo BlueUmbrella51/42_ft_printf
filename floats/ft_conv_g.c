@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/08 15:14:03 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 19:51:59 by lravier       ########   odam.nl         */
+/*   Updated: 2019/11/14 13:14:21 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ static int	ft_g_as_f(t_pf_arg *instr, t_bigint *val)
 int			ft_conv_g(t_pf_arg *instr, t_bigint *val, long int exp)
 {
 	t_pf_arg	cpy_instr;
-    t_bigint    cpy_val;
-    int         fact;
+	t_bigint	cpy_val;
+	int			fact;
 
 	fact = 0;
 	cpy_val = *val;
