@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/20 09:28:12 by lravier        #+#    #+#                */
-/*   Updated: 2019/11/09 19:29:08 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/17 16:45:34 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+void				ft_del(void *content, size_t size);
 void				ft_putchar(int c);
 void				ft_putstr(char const *str);
 void				*ft_memset(void *arr, int c, size_t n);
@@ -80,13 +82,15 @@ void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstaddend(t_list **begin_list, void const *s, size_t n);
-void				ft_lstadd(t_list **alst, t_list *new);
+int					ft_lstaddend(t_list **begin_list, void const *s, size_t n);
+void				ft_lstadd(t_list **alst, t_list *nw);
+int					ft_lstlen(t_list **alst);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list				*ft_lstpop(t_list **lst);
 int					ft_isupper(int c);
 int					ft_islower(int c);
-void				ft_error(char *str);
+int					ft_error(char *str, int n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_itoabase(int n, int base);
 int					ft_atoibase(char *s, int base);

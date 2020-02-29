@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_strtrim.c                                       :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: lravier <marvin@codam.nl>                    +#+                     */
+/*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/25 07:48:16 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/28 10:34:16 by lravier       ########   odam.nl         */
+/*   Created: 2019/03/25 07:48:16 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/14 14:20:07 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

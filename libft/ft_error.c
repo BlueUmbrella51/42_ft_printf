@@ -3,23 +3,17 @@
 /*                                                        ::::::::            */
 /*   ft_error.c                                         :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: lravier <marvin@codam.nl>                    +#+                     */
+/*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/20 10:54:55 by lravier       #+#    #+#                 */
-/*   Updated: 2019/03/20 13:28:49 by lravier       ########   odam.nl         */
+/*   Created: 2019/03/20 10:54:55 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/29 14:27:28 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_error(char *str)
+int	ft_error(char *str, int n)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		write(2, &str[i], 1);
-	}
-	ft_putchar('\n');
+	ft_putstr_fd(str, 2);
+	return (n);
 }
