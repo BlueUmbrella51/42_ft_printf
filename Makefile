@@ -16,6 +16,10 @@ ft_check_dbl
 SRC_FILES=$(addprefix srcs/,$(addsuffix .c,$(RAW_FILES)))
 OBJ_FILES=$(patsubst srcs/%.c,obj/%.o,$(SRC_FILES))
 HEADER=includes/libftprintf.h
+GNL_RAW=get_next_line
+GNL_SRC=$(addsuffix .c,$(addprefix libft/,$(GNL_RAW)))
+GNL_OBJ=$(patsubst libft/%.c,libft/obj/%.o,$(GNL_SRC))
+GNL_HEADER=libft/get_next_line.h
 LIBFT_RAW=ft_putchar ft_putstr ft_error ft_memset ft_bzero ft_strlen \
 ft_isupper ft_islower ft_isalpha ft_isdigit ft_isalnum ft_isascii ft_isprint \
 ft_toupper ft_tolower ft_isspace ft_atoi ft_strcpy ft_strncpy ft_strcmp \
@@ -29,10 +33,10 @@ ft_lstaddend ft_lstadd ft_lstiter ft_lstmap ft_mempcpy ft_itoabase \
 ft_swap ft_sqrt ft_rot ft_rotr ft_atoibase ft_pow ft_strtolower ft_lstpop \
 ft_lstpopend ft_lstlen ft_strtoupper ft_memrealloc ft_lstremove ft_lstsearch \
 ft_strplen ft_strtrunc ft_strndup ft_memdup ft_memplen ftd_memalloc \
-ft_memtrunc ft_lsteremove ft_lsttoarr ft_lstedel get_next_line
+ft_memtrunc ft_lsteremove ft_lsttoarr ft_lstedel
 LIBFT_SRC=$(addsuffix .c,$(addprefix libft/,$(LIBFT_RAW)))
-LIBFT_OBJ=$(patsubst libft/%.c,libft/%.o,$(LIBFT_SRC))
-LIBFT_HEADER=libft/libft.h libft/get_next_line.h
+LIBFT_OBJ=$(patsubst libft/%.c,libft/obj/%.o,$(LIBFT_SRC))
+LIBFT_HEADER=libft/libft.h
 FLOATS_RAW=ft_frexp ft_get_string float_utilities ft_create_bigint \
 ft_mult_bigint ft_div_bigint ft_round_bigint ft_create_string ft_fill_str \
 ft_scale_bigint ft_create_string_e ft_get_len_zero_excep ft_zero_str \
@@ -42,31 +46,33 @@ FLOATS_SRC=$(addsuffix .c,$(addprefix floats/,$(FLOATS_RAW)))
 FLOATS_OBJ=$(patsubst floats/%.c,floats/%.o,$(FLOATS_SRC))
 FLOATS_HEADER=floats/includes/floats.h
 OBJ_DIR=obj
+LIBFT_OBJ_DIR=libft/obj
 
 all: $(NAME)
 
-$(NAME): $(OBJ_FILES) libft/libft.a floats/libfloats.a
-	libtool -static -o $@ $^
+$(NAME): $(OBJ_FILES) $(LIBFT_OBJ) $(FLOATS_OBJ) $(GNL_OBJ)
+	ar rcs $@ $^
 
-export CFLAGS=$(IFLAGS)
-libft/libft.a: $(LIBFT_OBJ)
-	$(MAKE) -C libft
-
-$(LIBFT_OBJ): $(LIBFT_HEADER)
-
-floats/libfloats.a: $(FLOATS_OBJ)
-	$(MAKE) -C floats
-
-$(FLOATS_OBJ): $(FLOATS_HEADER)
+libft/obj:
+	mkdir $@
 
 obj:
 	mkdir $@
 
-obj/%.o: srcs/%.c $(HEADER) | obj
+obj/%.o: srcs/%.c $(HEADER) | $(OBJ_DIR)
+	$(CC) $(IFLAGS) -o $@ -c $<
+
+libft/obj/%.o: libft/%.c $(LIBFT_HEADER) | $(LIBFT_OBJ_DIR)
+	$(CC) $(IFLAGS) -o $@ -c $<
+
+libft/obj/get_next_line.o: libft/get_next_line.c $(GNL_HEADER) | $(LIBFT_OBJ_DIR)
+	$(CC) $(IFLAGS) -o $@ -c $<
+
+floats/%.o: floats/%.c $(FLOATS_HEADER)
 	$(CC) $(IFLAGS) -o $@ -c $<
 
 clean_obj:
-	if [ -d "$(OBJ_DIR)" ]; then rm -rf obj; fi
+	if [ -d "$(OBJ_DIR)" ]; then rm -rf $(OBJ_DIR); fi
 
 clean: clean_obj
 	make clean -C libft

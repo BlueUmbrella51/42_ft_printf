@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   get_next_line.h                                    :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: lravier <marvin@codam.nl>                    +#+                     */
+/*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/03/31 10:10:58 by lravier       #+#    #+#                 */
-/*   Updated: 2019/04/18 09:52:38 by lravier       ########   odam.nl         */
+/*   Created: 2019/03/31 10:10:58 by lravier        #+#    #+#                */
+/*   Updated: 2020/02/29 15:19:31 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 

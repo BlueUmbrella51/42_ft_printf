@@ -6,7 +6,7 @@
 /*   By: lravier <lravier@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/03/20 09:28:12 by lravier        #+#    #+#                */
-/*   Updated: 2020/02/17 16:45:34 by lravier       ########   odam.nl         */
+/*   Updated: 2020/02/29 15:20:09 by lravier       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,4 @@ int					ft_memtrunc(void **orig, size_t start, size_t len);
 int					ft_lsttoarr(t_list **lst, void **arr, size_t arrlen);
 void				ft_lstedel(t_list **alst);
 int					ft_memrealloc(void **ptr, size_t prev_size, size_t size);
-
 #endif
