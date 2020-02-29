@@ -14,6 +14,9 @@ following requirements:
 • You must manage the minimum field-width\
 • You must manage the precision
 
+The full assignment can be found here:\
+[ft_printf subject](https://github.com/LER1990/42_subjects/blob/master/ft_printf.en.pdf)
+
 As a bonus I also implemented the following:
 
 • Added vasprintf, vdprintf, vfprintf, vsnprintf, and vsprintf\
