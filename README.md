@@ -12,16 +12,17 @@ following requirements:
 • You must manage %%\
 • You must manage the flags #0-+ and space\
 • You must manage the minimum field-width\
-• You must manage the precision\
-As a bonus I also implemented the following:\
+• You must manage the precision
+
+As a bonus I also implemented the following:
 
 • Added vasprintf, vdprintf, vfprintf, vsnprintf, and vsprintf\
 • Extended the precision and handling of floats beyond the scope of the assignment\
 • Implementation can also handle e and g conversions\
-• Added a %b conversion to print integers in binary format\
+• Added a %b conversion to print integers in binary format
 
 No existing functions could be used during this project, except for:\
 • write\
 • malloc\
 • free\
-• exit\
+• exit
